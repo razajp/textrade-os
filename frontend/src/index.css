@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+* {
+    letter-spacing: 0.6px !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+button {
+    cursor: pointer;
+}

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axiosClient from "../api/axiosClient";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import { motion } from "framer-motion";
 import { useAuth } from "../context/AuthContext";
 import { useToast } from "../context/ToastContext";
 
@@ -13,7 +14,6 @@ export default function Login() {
   const navigate = useNavigate();
   const { addToast } = useToast();
 
-  // 🔹 Redirect if already logged in
   useEffect(() => {
     if (user) navigate("/dashboard");
   }, [user, navigate]);
@@ -37,31 +37,54 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white shadow-lg rounded-lg p-8 w-96">
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
-        <form onSubmit={handleSubmit}>
-          <Input
-            label="Username"
-            name="username"
-            type="text"
-            value={form.username}
-            onChange={handleChange}
-            required
-          />
-          <Input
-            label="Password"
-            name="password"
-            type="password"
-            value={form.password}
-            onChange={handleChange}
-            required
-          />
-          <Button type="submit" disabled={loading}>
-            {loading ? "Logging in..." : "Login"}
-          </Button>
-        </form>
-      </div>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#d7f5f5] via-[#eaf4f4] to-[#c8e6e6] p-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="bg-white rounded-2xl border border-gray-300 overflow-hidden mx-auto flex w-[70rem] h-[40rem] shadow-xl relative"
+      >
+        {/* 🔹 Left Side - Image */}
+        <div className="left w-[55%] h-[40rem] relative p-15">
+          <div className="h-full w-full rounded-xl overflow-hidden flex items-center">
+            <img
+              src="https://i.pinimg.com/1200x/3b/4d/c2/3b4dc268587f3bd530a5b231af4f6565.jpg"
+              alt="Login illustration"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* 🔹 Right Side - Login Form */}
+        <div className="right flex items-center justify-center rounded-xl w-[45%]">
+          <form onSubmit={handleSubmit} className="space-y-5 w-80">
+            <h1 className="text-center text-2xl font-semibold text-gray-800 mb-2">
+              Login
+            </h1>
+            <Input
+              label="Username"
+              name="username"
+              type="text"
+              placeholder="Enter your username"
+              value={form.username}
+              onChange={handleChange}
+              required
+            />
+            <Input
+              label="Password"
+              name="password"
+              type="password"
+              placeholder="Enter your password"
+              value={form.password}
+              onChange={handleChange}
+              required
+            />
+            <Button type="submit" disabled={loading} className="w-full">
+              {loading ? "Logging in..." : "Login"}
+            </Button>
+          </form>
+        </div>
+      </motion.div>
     </div>
   );
 }

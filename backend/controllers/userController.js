@@ -48,6 +48,7 @@ export const loginUser = async (req, res) => {
     if (user && (await user.matchPassword(password))) {
       res.json({
         _id: user.id,
+        name: user.name,
         username: user.username,
         token: generateToken(user._id),
       });

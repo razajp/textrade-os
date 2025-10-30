@@ -3,6 +3,7 @@ import { AuthProvider } from "./context/AuthContext";
 import Login from "./pages/Login";
 import DeveloperDashboard from "./pages/DeveloperDashboard";
 import PrivateRoute from "./routes/PrivateRoute";
+import Layout from "./layouts/Layout";
 
 export default function App() {
   return (
@@ -16,14 +17,17 @@ export default function App() {
           <Route path="/login" element={<Login />} />
 
           {/* 🔹 Protected route */}
-          <Route
-            path="/dashboard"
-            element={
-              <PrivateRoute>
-                <DeveloperDashboard />
-              </PrivateRoute>
-            }
-          />
+          
+          <Route element={<Layout />}>
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute>
+                  <DeveloperDashboard />
+                </PrivateRoute>
+              }
+            />
+          </Route>
 
           {/* 🔹 Catch-all (optional): redirect any unknown route to login */}
           <Route path="*" element={<Navigate to="/login" replace />} />
