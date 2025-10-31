@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import DeveloperDashboard from "./pages/developer/DeveloperDashboard";
 import PrivateRoute from "./routes/PrivateRoute";
 import Layout from "./layouts/Layout";
+import Businesses from "./pages/business/business";
 
 export default function App() {
   return (
@@ -24,6 +25,15 @@ export default function App() {
               element={
                 <PrivateRoute>
                   <DeveloperDashboard />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path="/businesses"
+              element={
+                <PrivateRoute>
+                  <Businesses />
                 </PrivateRoute>
               }
             />
