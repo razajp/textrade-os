@@ -1,10 +1,15 @@
-import { useAuth } from "../context/AuthContext";
-import { useToast } from "../context/ToastContext";
-import Button from "../components/Button";
+import { useEffect } from "react";
+import { useAuth } from "../../context/AuthContext";
+import { useToast } from "../../context/ToastContext";
+import Button from "../../components/Button";
 
 export default function DeveloperDashboard() {
   const { user, logout } = useAuth();
   const { addToast } = useToast();
+
+  useEffect(() => {
+    document.title = "Dashboard | TexTradeOS";
+  });
 
   return (
     <div>
@@ -15,8 +20,8 @@ export default function DeveloperDashboard() {
         </p>
 
         <Button
-          onClick={() => {
-            logout();
+          onClick={async () => {
+            await logout(); // 👈 wait for API call
             addToast("Logout Successfully!", "success");
           }}
         >
