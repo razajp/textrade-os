@@ -69,6 +69,7 @@ export default function Login() {
                 <span className="font-medium text-[#127475]/90">TexTradeOS</span>
               </p>
             </div>
+            <div className="border-t border-gray-300 my-4"></div>
 
             {/* Form Fields */}
             <div className="space-y-5">
@@ -103,7 +104,7 @@ export default function Login() {
             </div>
 
             {/* Divider + Footer */}
-            <div className="border-t border-gray-200 my-6"></div>
+            <div className="border-t border-gray-300 my-6"></div>
             <p className="text-center text-gray-500 text-xs">
               TexTradeOS · powered by{" "}
               <a
