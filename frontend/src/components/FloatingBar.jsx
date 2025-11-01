@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { LayoutDashboard, Settings } from "lucide-react";
+import { Building2, LayoutDashboard, Settings } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import NavItem from "./NavItem";
 
@@ -9,7 +9,7 @@ export default function FloatingBar() {
 
   const navigations = [
     {icon: LayoutDashboard, label: "Dashboard", link: "/dashboard"},
-    {icon: Settings, label: "Settings", link: "/settings"},
+    {icon: Building2, label: "Business", link: "/businesses"},
   ]
 
   return (
