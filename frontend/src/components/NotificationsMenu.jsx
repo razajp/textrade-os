@@ -1,10 +1,10 @@
-import { User } from 'lucide-react';
+import { Bell } from 'lucide-react';
 
 function MainMenu() {
   return (
     <div className='main-menu bg-[#f8fbfb] shadow-md border border-gray-300 p-1 rounded-2xl'>
         <button className="menu-button p-2 rounded-xl hover:bg-[#127475]/15 text-gray-700">
-          <User size={20}/>
+          <Bell size={20}/>
         </button>
     </div>
   )

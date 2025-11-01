@@ -1,4 +1,4 @@
-export default function Button({ children, variant="green-btn", ...props }) {
+export default function Button({ children, variant="green-btn", className, ...props }) {
   let styles = "";
   switch (variant) {
     case 'green-btn':
@@ -16,7 +16,7 @@ export default function Button({ children, variant="green-btn", ...props }) {
   return (
     <button
       {...props}
-      className={`w-full px-3 py-2 rounded-xl transition ${styles}`}
+      className={`px-4 py-2 rounded-xl transition ${styles} ${className}`}
     >
       {children}
     </button>

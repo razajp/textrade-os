@@ -2,7 +2,7 @@ export default function NavItem({ icon, label, onClick, active = false }) {
   return (
     <button
       onClick={onClick}
-      className={`relative py-2.5 px-3.5 rounded-xl text-sm flex items-center gap-2.5
+      className={`relative w-full py-2.5 px-3.5 rounded-xl text-sm flex items-center gap-2.5
         ${
           active
             ? "bg-[#127475] text-[#fcffff] hover:bg-[#0c5f60]"

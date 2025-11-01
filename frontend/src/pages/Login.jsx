@@ -40,7 +40,7 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#e8f9f9] via-[#f8fbfb] to-[#d3f0f0] p-4 overflow-hidden relative">
       {/* 🔹 Main Card */}
-      <motion.div initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col md:flex-row bg-white/90 backdrop-blur-md rounded-3xl border border-gray-300 shadow-lg overflow-hidden w-full max-w-6xl" >
+      <motion.div initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col md:flex-row bg-white/90 rounded-3xl border border-gray-300 shadow-lg overflow-hidden w-full max-w-6xl" >
         {/* 🔹 Left Side - Image */}
         <div className="hidden md:flex w-1/2 p-8 py-15">
           <img
@@ -96,8 +96,7 @@ export default function Login() {
               <Button
                 type="submit"
                 disabled={loading}
-                aria-label="Login to your account"
-                className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-medium py-2.5 rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all duration-150"
+                className="w-full"
               >
                 {loading ? "Logging in..." : "Login"}
               </Button>
