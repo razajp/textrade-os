@@ -28,9 +28,6 @@ export default function App() {
               }
             />
           </Route>
-
-          {/* 🔹 Catch-all (optional): redirect any unknown route to login */}
-          <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </Router>
     </AuthProvider>
